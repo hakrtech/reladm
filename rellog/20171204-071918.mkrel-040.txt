@@ -1,0 +1,15 @@
+Script started on Mon Dec  4 07:19:18 2017
++ RELDIR=/releng/r1
++ SRCPATH=/usr/src
++ ISOFILE=install62.iso
++ ISOPATH=/releng/r1/install62.iso
++ [ ! -d /releng/r1 ]
++ [ ! -d /usr/src ]
++ [ ! -f /releng/r1/install62.iso ]
++ chown -R build:wsrc /usr/src
++ cp -f /releng/r1/install62.iso /usr/src/install62.iso
++ chmod +r /usr/src/install62.iso
++ chown build:wsrc /usr/src/install62.iso
++ exit 0
+
+Script done on Mon Dec	4 07:19:49 2017

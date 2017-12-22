@@ -1,0 +1,13 @@
+Script started on Thu Dec 14 07:42:54 2017
++ RELDIR=/rel/r1
++ SRCPATH=/usr/src
++ ISOFILE=install62.iso
++ ISOPATH=/rel/r1/install62.iso
++ [ ! -d /rel/r1 ]
++ [ ! -d /usr/src ]
++ [ ! -f /rel/r1/install62.iso ]
++ echo mkrel error: missing /rel/r1/install62.iso
+mkrel error: missing /rel/r1/install62.iso
++ exit 1
+
+Script done on Thu Dec 14 07:42:54 2017

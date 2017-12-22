@@ -1,0 +1,17 @@
+Script started on Thu Dec 14 07:40:45 2017
++ SRCDIR=/usr/src
++ RELPART=/rel
++ chown build /rel
++ chmod 700 /rel
++ RELEASEDIR=/rel/r1
++ DESTDIR=/rel/d1
++ export RELEASEDIR
++ export DESTDIR
++ rm -rf /rel/r1
++ rm -rf /rel/d1
++ unset RELEASEDIR
++ unset DESTDIR
++ unset SRCDIR
++ exit 0
+
+Script done on Thu Dec 14 07:40:45 2017

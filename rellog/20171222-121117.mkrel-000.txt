@@ -1,0 +1,18 @@
+Script started on Fri Dec 22 12:12:07 2017
++ SRCDIR=/usr/src
++ RELPART=/rel
++ mount -u -o noperm /rel
++ chown build /rel
++ chmod 700 /rel
++ RELEASEDIR=/rel/r1
++ DESTDIR=/rel/d1
++ export RELEASEDIR
++ export DESTDIR
++ rm -rf /rel/r1
++ rm -rf /rel/d1
++ unset RELEASEDIR
++ unset DESTDIR
++ unset SRCDIR
++ exit 0
+
+Script done on Fri Dec 22 12:12:07 2017

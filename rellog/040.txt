@@ -1,0 +1,17 @@
+Script started on Fri Dec 22 16:12:18 2017
++ RELPART=/rel
++ mount -u -o noperm /rel
++ RELDIR=/rel/r1
++ SRCPATH=/usr/src
++ ISOFILE=install62.iso
++ ISOPATH=/rel/r1/install62.iso
++ [ ! -d /rel/r1 ]
++ [ ! -d /usr/src ]
++ [ ! -f /rel/r1/install62.iso ]
++ chown -R build:wsrc /usr/src
++ cp -f /rel/r1/install62.iso /usr/src/install62.iso
++ chmod +r /usr/src/install62.iso
++ chown build:wsrc /usr/src/install62.iso
++ exit 0
+
+Script done on Fri Dec 22 16:12:41 2017

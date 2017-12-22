@@ -1,0 +1,17 @@
+Script started on Sun Dec  3 00:58:14 2017
++ SRCDIR=/usr/src
++ RELPART=/releng
++ chown build /releng
++ chmod 700 /releng
++ RELEASEDIR=/releng/r1
++ DESTDIR=/releng/d1
++ export RELEASEDIR
++ export DESTDIR
++ rm -rf /releng/r1
++ rm -rf /releng/d1
++ unset RELEASEDIR
++ unset DESTDIR
++ unset SRCDIR
++ exit 0
+
+Script done on Sun Dec	3 00:58:29 2017

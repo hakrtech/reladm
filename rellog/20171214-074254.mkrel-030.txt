@@ -1,0 +1,18 @@
+Script started on Thu Dec 14 07:42:54 2017
++ RELDIR=/rel/r1
++ export RELDIR
++ [ ! -d /rel/r1 ]
++ chown build /rel/r1
++ RELXDIR=/rel/r1
++ export RELXDIR
++ [ ! -d /rel/r1 ]
++ chown build /rel/r1
++ cd /usr/src/distrib/amd64/iso
++ make
+make: don't know how to make /rel/r1/base62.tgz (prerequisite of: install62.iso)
+Stop in /usr/src/distrib/amd64/iso
++ unset RELDIR
++ unset RELXDIR
++ exit 0
+
+Script done on Thu Dec 14 07:42:54 2017

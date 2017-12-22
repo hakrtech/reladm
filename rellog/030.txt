@@ -1,0 +1,170 @@
+Script started on Fri Dec 22 16:10:55 2017
++ RELPART=/rel
++ mount -u -o noperm /rel
++ RELDIR=/rel/r1
++ export RELDIR
++ [ ! -d /rel/r1 ]
++ chown build /rel/r1
++ RELXDIR=/rel/r1
++ export RELXDIR
++ [ ! -d /rel/r1 ]
++ chown build /rel/r1
++ cd /usr/src/distrib/amd64/iso
++ make
+rm -rf /usr/src/distrib/amd64/iso/obj/cd-dir
+mkdir -p /usr/src/distrib/amd64/iso/obj/cd-dir/6.2/amd64
+mkdir -p /usr/src/distrib/amd64/iso/obj/cd-dir/etc
+echo "set image /6.2/amd64/bsd.rd" > /usr/src/distrib/amd64/iso/obj/cd-dir/etc/boot.conf
+cp -p /rel/r1/base62.tgz /rel/r1/comp62.tgz  /rel/r1/game62.tgz /rel/r1/man62.tgz  /rel/r1/bsd /rel/r1/bsd.rd /rel/r1/bsd.mp  /rel/r1/INSTALL.amd64 /usr/src/distrib/amd64/iso/obj/cd-dir/6.2/amd64
+cp -p /rel/r1/xbase62.tgz /rel/r1/xfont62.tgz  /rel/r1/xshare62.tgz /rel/r1/xserv62.tgz /usr/src/distrib/amd64/iso/obj/cd-dir/6.2/amd64
+cat /rel/r1/SHA256 /rel/r1/SHA256 >  /usr/src/distrib/amd64/iso/obj/cd-dir/6.2/amd64/SHA256
+# XXX no SHA256.sig
+cp -p /rel/r1/cdbr /usr/src/distrib/amd64/iso/obj/cd-dir/6.2/amd64
+cp -p /rel/r1/cdboot /usr/src/distrib/amd64/iso/obj/cd-dir/6.2/amd64/cdboot
+mkhybrid -a -R -T -L -l -d -D -N -o /usr/src/distrib/amd64/iso/obj/install62.iso -v -v	-A "OpenBSD 6.2 amd64 Install CD"  -P "Copyright (c) `date +%Y` Theo de Raadt, The OpenBSD project"  -p "Theo de Raadt <deraadt@openbsd.org>"  -V "OpenBSD/amd64   6.2 Install CD"  -b 6.2/amd64/cdbr -c 6.2/amd64/boot.catalog	 /usr/src/distrib/amd64/iso/obj/cd-dir
+mkhybrid 1.12b5.1
+Scanning /usr/src/distrib/amd64/iso/obj/cd-dir
+Scanning /usr/src/distrib/amd64/iso/obj/cd-dir/6.2
+Scanning /usr/src/distrib/amd64/iso/obj/cd-dir/6.2/amd64
+Scanning /usr/src/distrib/amd64/iso/obj/cd-dir/etc
+  23   586
+  24   444 6.2
+  25  2306 amd64
+  27   452 etc
+Cache hit for /..
+29 29 /TRANS.TBL
+Cache hit for 6.2/.
+Cache hit for 6.2/..
+30 30 /usr/src/distrib/amd64/iso/obj/cd-dir/6.2/TRANS.TBL
+Cache hit for amd64/.
+Cache hit for amd64/..
+31 72645 /usr/src/distrib/amd64/iso/obj/cd-dir/6.2/amd64/base62.tgz
+72646 72646 /usr/src/distrib/amd64/iso/obj/cd-dir/6.2/amd64/boot.catalog
+72647 78983 /usr/src/distrib/amd64/iso/obj/cd-dir/6.2/amd64/bsd
+78984 85365 /usr/src/distrib/amd64/iso/obj/cd-dir/6.2/amd64/bsd.mp
+85366 90153 /usr/src/distrib/amd64/iso/obj/cd-dir/6.2/amd64/bsd.rd
+90154 90194 /usr/src/distrib/amd64/iso/obj/cd-dir/6.2/amd64/cdboot
+90195 90195 /usr/src/distrib/amd64/iso/obj/cd-dir/6.2/amd64/cdbr
+90196 129085 /usr/src/distrib/amd64/iso/obj/cd-dir/6.2/amd64/comp62.tgz
+129086 130446 /usr/src/distrib/amd64/iso/obj/cd-dir/6.2/amd64/game62.tgz
+130447 130468 /usr/src/distrib/amd64/iso/obj/cd-dir/6.2/amd64/INSTALL.amd64
+130469 133975 /usr/src/distrib/amd64/iso/obj/cd-dir/6.2/amd64/man62.tgz
+133976 133976 /usr/src/distrib/amd64/iso/obj/cd-dir/6.2/amd64/SHA256
+133977 133977 /usr/src/distrib/amd64/iso/obj/cd-dir/6.2/amd64/TRANS.TBL
+133978 143054 /usr/src/distrib/amd64/iso/obj/cd-dir/6.2/amd64/xbase62.tgz
+143055 162734 /usr/src/distrib/amd64/iso/obj/cd-dir/6.2/amd64/xfont62.tgz
+162735 169014 /usr/src/distrib/amd64/iso/obj/cd-dir/6.2/amd64/xserv62.tgz
+169015 171225 /usr/src/distrib/amd64/iso/obj/cd-dir/6.2/amd64/xshare62.tgz
+Cache hit for etc/.
+Cache hit for etc/..
+171226 171226 /usr/src/distrib/amd64/iso/obj/cd-dir/etc/boot.conf
+171227 171227 /usr/src/distrib/amd64/iso/obj/cd-dir/etc/TRANS.TBL
+
+Size of boot image is 4 sectors -> No-emulation CD boot sector
+Total extents scheduled to be written = 171228
+  2.92% done, estimate finish Fri Dec 22 16:11:06 2017
+  5.85% done, estimate finish Fri Dec 22 16:11:23 2017
+  8.76% done, estimate finish Fri Dec 22 16:11:17 2017
+ 11.69% done, estimate finish Fri Dec 22 16:11:14 2017
+ 14.60% done, estimate finish Fri Dec 22 16:11:12 2017
+ 17.53% done, estimate finish Fri Dec 22 16:11:17 2017
+ 20.44% done, estimate finish Fri Dec 22 16:11:15 2017
+ 23.37% done, estimate finish Fri Dec 22 16:11:14 2017
+ 26.28% done, estimate finish Fri Dec 22 16:11:13 2017
+ 29.21% done, estimate finish Fri Dec 22 16:11:16 2017
+ 32.13% done, estimate finish Fri Dec 22 16:11:15 2017
+ 35.05% done, estimate finish Fri Dec 22 16:11:14 2017
+ 37.97% done, estimate finish Fri Dec 22 16:11:13 2017
+ 40.89% done, estimate finish Fri Dec 22 16:11:15 2017
+ 43.81% done, estimate finish Fri Dec 22 16:11:15 2017
+ 46.73% done, estimate finish Fri Dec 22 16:11:14 2017
+ 49.64% done, estimate finish Fri Dec 22 16:11:14 2017
+ 52.57% done, estimate finish Fri Dec 22 16:11:15 2017
+ 55.49% done, estimate finish Fri Dec 22 16:11:15 2017
+ 58.40% done, estimate finish Fri Dec 22 16:11:16 2017
+ 61.33% done, estimate finish Fri Dec 22 16:11:15 2017
+ 64.24% done, estimate finish Fri Dec 22 16:11:15 2017
+ 67.17% done, estimate finish Fri Dec 22 16:11:16 2017
+ 70.08% done, estimate finish Fri Dec 22 16:11:15 2017
+ 73.01% done, estimate finish Fri Dec 22 16:11:15 2017
+ 75.93% done, estimate finish Fri Dec 22 16:11:15 2017
+ 78.84% done, estimate finish Fri Dec 22 16:11:16 2017
+ 81.77% done, estimate finish Fri Dec 22 16:11:15 2017
+ 84.69% done, estimate finish Fri Dec 22 16:11:15 2017
+ 87.61% done, estimate finish Fri Dec 22 16:11:16 2017
+ 90.53% done, estimate finish Fri Dec 22 16:11:15 2017
+ 93.45% done, estimate finish Fri Dec 22 16:11:15 2017
+ 96.37% done, estimate finish Fri Dec 22 16:11:16 2017
+ 99.29% done, estimate finish Fri Dec 22 16:11:16 2017
+Total translation table size: 920
+Total rockridge attributes bytes: 2495
+Total directory bytes: 8192
+Path table size(bytes): 48
+Max brk space used 0
+171228 extents written (334 Mb)
+cp /rel/r1/bsd.rd bsd.strip
+strip bsd.strip
+strip -R .comment -R .SUNW_ctf bsd.strip
+gzip -c9n bsd.strip > bsd.gz
+dd if=/dev/zero of=/var/tmp/image.19183 bs=512 count=738240
+738240+0 records in
+738240+0 records out
+377978880 bytes transferred in 9.961 secs (37945347 bytes/sec)
+vnconfig -v -c vnd0 /var/tmp/image.19183
+vnd0: 377978880 bytes on /var/tmp/image.19183
+fdisk -yi -l 737280 -b 960 -f /usr/mdec/mbr vnd0
+Writing MBR at offset 0.
+disklabel -wAT /usr/src/distrib/amd64/iso/template vnd0
+newfs -t msdos /dev/rvnd0i
+/dev/rvnd0i: 920 sectors in 115 FAT12 clusters (4096 bytes/cluster)
+bps=512 spc=8 res=1 nft=2 rde=512 sec=960 mid=0xf8 spf=1 spt=63 hds=1 hid=64
+mount /dev/vnd0i /mnt
+mkdir -p /mnt/efi/boot
+cp /usr/mdec/BOOTX64.EFI /usr/mdec/BOOTIA32.EFI /mnt/efi/boot
+umount /mnt
+newfs -m 0 -o space -i 524288 -c 737280 /dev/rvnd0a
+/dev/rvnd0a: 359.5MB in 736256 sectors of 512 bytes
+2 cylinder groups of 252.22MB, 16142 blocks, 512 inodes each
+super-block backups (for fsck -b #) at:
+ 32, 516576,
+mount /dev/vnd0a /mnt
+cp /usr/mdec/boot /mnt/boot
+strip /mnt/boot
+strip -R .comment -R .SUNW_ctf /mnt/boot
+dd if=bsd.gz of=/mnt/bsd bs=512
+7549+1 records in
+7549+1 records out
+3865282 bytes transferred in 0.091 secs (42189466 bytes/sec)
+installboot -v -r /mnt /dev/rvnd0c  /usr/mdec/biosboot /mnt/boot
+Using /mnt as root
+installing bootstrap on /dev/rvnd0c
+using first-stage /usr/mdec/biosboot, second-stage /mnt/boot
+copying /mnt/boot to /mnt/boot
+/mnt/boot is 5 blocks x 16384 bytes
+fs block shift 2; part offset 1024; inode block 24, offset 936
+master boot record (MBR) at sector 0
+	partition 0: type 0xEF offset 64 size 960
+	partition 3: type 0xA6 offset 1024 size 736256
+/usr/mdec/biosboot will be written at sector 1024
+mkdir -p /mnt/6.2/amd64
+mkdir -p /mnt/etc
+echo "set image /6.2/amd64/bsd.rd" > /mnt/etc/boot.conf
+cp -p /rel/r1/base62.tgz /rel/r1/comp62.tgz  /rel/r1/game62.tgz /rel/r1/man62.tgz  /rel/r1/bsd /rel/r1/bsd.rd /rel/r1/bsd.mp  /rel/r1/INSTALL.amd64 /mnt/6.2/amd64
+cp -p /rel/r1/xbase62.tgz /rel/r1/xfont62.tgz  /rel/r1/xshare62.tgz /rel/r1/xserv62.tgz /mnt/6.2/amd64
+cat /rel/r1/SHA256 /rel/r1/SHA256 >  /mnt/6.2/amd64/SHA256
+# XXX no SHA256.sig
+
+Filesystem  512-blocks	    Used     Avail Capacity iused   ifree  %iused  Mounted on
+/dev/vnd0a	735836	  692528     43308    94%      20    1002     2%   /mnt
+
+umount /mnt
+vnconfig -u vnd0
+cp /var/tmp/image.19183 install62.fs
+rm /var/tmp/image.19183
++ make install
+cp install62.iso install62.fs /rel/r1/
++ unset RELDIR
++ unset RELXDIR
++ exit 0
+
+Script done on Fri Dec 22 16:12:17 2017
