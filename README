@@ -1,0 +1,130 @@
+How to install OpenBSD source and recompile the whole system
+------------------------------------------------------------
+
+0. install virtualbox from virtualbox.org
+
+1. install openbsd amd64 iso on virtual box from hakrtech
+
+   Need a separate document for this.
+   a. select install not autoinstall
+   b. select autolayout
+   c. select yes when asked to proceed without verifying 
+   d. remember to remove the iso file from the cd drive in virtualbox and then reboot.
+      otherwise after reboot the install will happen again. :-) you do not want that.
+
+2. configure doas
+
+ $ su -
+ # echo "permit nopass dinesh" > /etc/doas.conf
+ # exit
+ $ doas id
+
+note: replace dinesh with your username
+
+3. install git
+
+ $ echo https://ftp.openbsd.org/pub/OpenBSD | doas tee /etc/installurl
+ $ doas pkg_add -vv git
+
+3a. configure git
+
+ $ git config --global user.name "Your Full Name"
+ $ git config --global user.email "your@email.address"
+
+Note: Kindly replace "Your Full Name" with your full name. And kindly replace your email address with your email address.
+
+3b. install nano (optional. kindly skip if you are familiar with vi)
+
+ $ doas pkg_add -vvv nano
+
+3c. install firefox (optional. kindly skip if you are not using x windows) 
+
+ $ doas pkg_add -vvv firefox
+
+4. get openbsd source (kindly note, that if you are not in usa/canada, 
+   you should not do this from github.com), i will provide some other
+   ways to get the source.
+
+ $ cd /usr
+ $ doas git clone --depth 1 https://github.com/openbsd/src.git
+ $ doas chown -R $USER /usr/src
+
+4a. get my scripts
+
+ $ cd /usr
+ $ doas git clone https://github.com/hakrtech/reladm.git
+ $ doas chown -R $USER /usr/reladm
+
+5. get x windows source
+
+ $ cd /usr
+ $ doas git clone --depth 100 https://github.com/openbsd/xenocara.git
+ $ cd xenocara
+ $ doas chown -R $USER /usr/xenocara
+
+6. get ports source
+
+ $ cd /usr
+ $ doas git clone --depth 100 https://github.com/openbsd/ports.git
+ $ doas chown -R $USER /usr/ports
+ 
+7. build kernel and install it
+
+ $ cd /usr/src
+ $ doas /usr/reladm/mkkern.sh
+ $ doas reboot
+
+8. build base system
+
+ $ cd /usr/src
+ $ doas /usr/reladm/mkbase.sh
+
+9. build base faster (use when repeating compilation of base, instead of 8)
+
+ $ cd /usr/src
+ $ doas /usr/reladm/mkrebase.sh
+
+10. build x windows
+
+ $ cd /usr/xenocara
+ $ doas /usr/reladm/mkxeno.sh
+
+congrats you have recompiled the whole system.
+
+you can update to the latest source and recompile the system
+
+11. update the kernel source
+
+ $ cd /usr/src
+ $ doas chown -R $USER /usr/src # you should write perms anywhere under /usr/src
+ $ git pull origin master        # this gets latest source
+ $ doas /usr/reladm/mkkern.sh            # this compiles and installs the latest kernel
+ $ doas reboot                 # you need to reboot to start using the new kernel
+
+12. update base source (baseland and kernel source are in same tree)
+
+ $ cd /usr/src
+ $ doas chown -R $USER /usr/src # need a writeable /usr/src
+ $ git pull origin master
+ $ doas /usr/reladm/mkrebase.sh   # recompile the base system and install it
+
+13. update x windows
+
+ $ cd /usr/xenocara
+ $ doas chown -R $USER /usr/xenocara # ensure you can write in /usr/xenocara
+ $ git pull origin master
+ $ doas /usr/reladm/mkxeno.sh     # compile x windows and install it
+
+you now have a very good development environment, where 
+you can easily update 
+a. kernel 
+b. base utilities 
+c. x windows, 
+d. and 3rd party packages by compiling latest source!
+
+now enjoy programming your application and/or modify any part of the system.
+
+have fun.
+
+thanks -dinesh
+
